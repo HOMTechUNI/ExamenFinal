@@ -1,4 +1,4 @@
-public class LaptopComputer implements DeviceBuilder{
+public class Laptop implements DeviceBuilder{
     String motherboard;
     String cpu;
     String ram;
