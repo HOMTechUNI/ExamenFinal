@@ -1,4 +1,4 @@
-public class ComputerChassis implements DeviceBuilder{
+public class Desktop implements DeviceBuilder{
     String motherboard;
     String cpu;
     String ram;
