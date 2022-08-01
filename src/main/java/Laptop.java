@@ -1,22 +1,33 @@
-public class Laptop implements DeviceBuilder{
+public class Laptop implements Device{
     String motherboard;
     String cpu;
     String ram;
     String gpu;
-    @Override
-    public void setMotherboard(String motherboard) {
-        System.out.println("Motherboard: " + motherboard);
+
+    public Laptop() {
+        this.motherboard = "";
+        this.cpu = "";
+        this.ram = "";
+        this.gpu = "";
     }
+
     @Override
-    public void setCpu(String cpu) {
-        System.out.println("CPU: " + cpu);
+    public String getMotherboard() {
+        return motherboard;
     }
+
     @Override
-    public void setRam(String ram) {
-        System.out.println("RAM: " + ram);
+    public String getCpu() {
+        return cpu;
     }
+
     @Override
-    public void setGpu(String gpu) {
-        System.out.println("GPU: " + gpu);
+    public String getRam() {
+        return ram;
+    }
+
+    @Override
+    public String getGpu() {
+        return gpu;
     }
 }
