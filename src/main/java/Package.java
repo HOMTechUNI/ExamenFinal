@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public abstract class Package implements Box{
+public class Package implements Box{
 
     ArrayList<DeviceBuilder> devices = new ArrayList<>();
 
