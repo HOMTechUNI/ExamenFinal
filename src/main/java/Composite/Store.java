@@ -27,4 +27,8 @@ public class Store implements Box {
     public void display() {
         //aaaaaaaaaaa
     }
+
+    public ArrayList<Package> returnArrayList() {
+        return packages;
+    }
 }

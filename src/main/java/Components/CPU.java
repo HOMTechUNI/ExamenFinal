@@ -1,6 +1,5 @@
 package Components;
 
-import Components.Component;
 
 public class CPU implements Component {
     String cpuId;
