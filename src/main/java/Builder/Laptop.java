@@ -1,35 +1,58 @@
 package Builder;
 
+import Components.*;
+
+import java.util.ArrayList;
+
 public class Laptop implements Device {
-    String motherboard;
-    String cpu;
-    String ram;
-    String gpu;
+    Motherboard motherboard;
+    CPU cpu;
+    RAM ram;
+    Storage storage;
+    GPU gpu;
 
     public Laptop() {
-        this.motherboard = "";
-        this.cpu = "";
-        this.ram = "";
-        this.gpu = "";
+        this.motherboard = new Motherboard();
+        this.cpu = new CPU();
+        this.ram = new RAM();
+        this.storage = new Storage();
+        this.gpu = new GPU();
     }
 
     @Override
-    public String getMotherboard() {
+    public Motherboard getMotherboard() {
         return motherboard;
     }
 
     @Override
-    public String getCpu() {
+    public CPU getCpu() {
         return cpu;
     }
 
     @Override
-    public String getRam() {
+    public RAM getRam() {
         return ram;
     }
 
     @Override
-    public String getGpu() {
+    public Storage getStorage() {
+        return storage;
+    }
+
+    @Override
+    public GPU getGpu() {
         return gpu;
+    }
+
+    @Override
+    public ArrayList<String> allComponents() {
+
+        ArrayList<String> allNameComponents = new ArrayList<>();
+        allNameComponents.add(motherboard.getName());
+        allNameComponents.add(cpu.getName());
+        allNameComponents.add(ram.getName());
+        allNameComponents.add(storage.getName());
+        allNameComponents.add(gpu.getName());
+        return allNameComponents;
     }
 }
