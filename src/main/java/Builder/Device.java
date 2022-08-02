@@ -10,6 +10,5 @@ public interface Device {
     RAM getRam();
     Storage getStorage();
     GPU getGpu();
-
     ArrayList<String> allComponents();
 }
