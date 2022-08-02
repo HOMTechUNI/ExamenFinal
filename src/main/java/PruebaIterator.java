@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class PruebaIterator {
 
-    ArrayList <Container> items = new ArrayList<>();
+    ArrayList <Store> items = new ArrayList<>();
 
-    public void addNewItems(Container box){
+    public void addNewItems(Store box){
         items.add(box);
     }
 /*
