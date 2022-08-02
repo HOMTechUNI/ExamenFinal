@@ -1,16 +1,22 @@
 package Components;
 
-import Components.Component;
-
 public class Storage implements Component {
-    String IDStorage;
+    String storageId;
     String nameStorage;
     String memory;
     String type;
     Double price;
 
-    public Storage(String IDStorage, String nameStorage, String memory, String type, Double price) {
-        this.IDStorage = IDStorage;
+    public Storage() {
+        this.storageId = "";
+        this.nameStorage = "";
+        this.memory = "";
+        this.type = "";
+        this.price = 0.0;
+    }
+
+    public Storage(String storageId, String nameStorage, String memory, String type, Double price) {
+        this.storageId = storageId;
         this.nameStorage = nameStorage;
         this.memory = memory;
         this.type = type;
@@ -18,7 +24,7 @@ public class Storage implements Component {
     }
 
     @Override
-    public void getName() {
-        System.out.println("Components.Storage name: " + nameStorage);
+    public String getName() {
+        return nameStorage;
     }
 }

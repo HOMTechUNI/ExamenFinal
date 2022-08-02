@@ -1,8 +1,15 @@
 package Builder;
 
+import Components.*;
+
+import java.util.ArrayList;
+
 public interface Device {
-    String getMotherboard();
-    String getCpu();
-    String getRam();
-    String getGpu();
+    Motherboard getMotherboard();
+    CPU getCpu();
+    RAM getRam();
+    Storage getStorage();
+    GPU getGpu();
+
+    ArrayList<String> allComponents();
 }

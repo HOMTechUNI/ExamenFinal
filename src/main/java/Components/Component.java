@@ -1,5 +1,5 @@
 package Components;
 
 public interface Component {
-    void getName();
+    String getName();
 }

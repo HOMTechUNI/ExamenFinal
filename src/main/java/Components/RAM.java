@@ -1,16 +1,22 @@
 package Components;
 
-import Components.Component;
-
 public class RAM implements Component {
-    String IDRAM;
+    String ramId;
     String nameRAM;
     String memory;
     String type;
     Double price;
 
-    public RAM(String IDRAM, String nameRAM, String memory, String type, Double price) {
-        this.IDRAM = IDRAM;
+    public RAM() {
+        this.ramId = "";
+        this.nameRAM = "";
+        this.memory = "";
+        this.type = "";
+        this.price = 0.0;
+    }
+
+    public RAM(String ramId, String nameRAM, String memory, String type, Double price) {
+        this.ramId = ramId;
         this.nameRAM = nameRAM;
         this.memory = memory;
         this.type = type;
@@ -18,7 +24,7 @@ public class RAM implements Component {
     }
 
     @Override
-    public void getName() {
-        System.out.println("Components.RAM name: " + nameRAM);
+    public String getName() {
+        return nameRAM;
     }
 }

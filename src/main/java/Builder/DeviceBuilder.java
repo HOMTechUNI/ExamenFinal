@@ -1,8 +1,11 @@
 package Builder;
 
+import Components.*;
+
 public interface DeviceBuilder {
-    void setMotherboard(String motherboard);
-    void setCpu(String cpu);
-    void setRam(String ram);
-    void setGpu(String gpu);
+    void setMotherboard(Motherboard motherboard);
+    void setCpu(CPU cpu);
+    void setRam(RAM ram);
+    void setStorage(Storage storage);
+    void setGpu(GPU gpu);
 }

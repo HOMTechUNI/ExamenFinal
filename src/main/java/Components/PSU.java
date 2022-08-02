@@ -3,20 +3,20 @@ package Components;
 import Components.Component;
 
 public class PSU implements Component {
-    String IDPSU;
+    String psuId;
     String namePSU;
     String type;
     Double price;
 
-    public PSU(String IDPSU, String namePSU, String type, Double price) {
-        this.IDPSU = IDPSU;
+    public PSU(String psuId, String namePSU, String type, Double price) {
+        this.psuId = psuId;
         this.namePSU = namePSU;
         this.type = type;
         this.price = price;
     }
 
     @Override
-    public void getName() {
-        System.out.println("Components.PSU name: " + namePSU);
+    public String getName() {
+        return namePSU;
     }
 }

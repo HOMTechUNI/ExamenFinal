@@ -3,14 +3,22 @@ package Components;
 import Components.Component;
 
 public class GPU implements Component {
-    String IDGPU;
+    String gpuId;
     String nameGPU;
     String memory;
     String type;
     Double price;
 
-    public GPU(String IDGPU, String nameGPU, String memory, String type, Double price) {
-        this.IDGPU = IDGPU;
+    public GPU() {
+        this.gpuId = "";
+        this.nameGPU = "";
+        this.memory = "";
+        this.type = "";
+        this.price = 0.0;
+    }
+
+    public GPU(String gpuId, String nameGPU, String memory, String type, Double price) {
+        this.gpuId = gpuId;
         this.nameGPU = nameGPU;
         this.memory = memory;
         this.type = type;
@@ -18,7 +26,7 @@ public class GPU implements Component {
     }
 
     @Override
-    public void getName() {
-        System.out.println("Components.GPU name: " + nameGPU);
+    public String getName() {
+        return nameGPU;
     }
 }

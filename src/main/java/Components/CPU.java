@@ -3,20 +3,26 @@ package Components;
 import Components.Component;
 
 public class CPU implements Component {
-    String IDCPU;
+    String cpuId;
     String nameCPU;
     String type;
     Double price;
 
-    public CPU(String IDCPU, String nameCPU, String type, Double price) {
-        this.IDCPU = IDCPU;
+    public CPU() {
+        this.cpuId = "";
+        this.nameCPU = "";
+        this.type = "";
+        this.price = 0.0;
+    }
+    public CPU(String cpuId, String nameCPU, String type, Double price) {
+        this.cpuId = cpuId;
         this.nameCPU = nameCPU;
         this.type = type;
         this.price = price;
     }
 
     @Override
-    public void getName() {
-        System.out.println("Components.CPU name: " + nameCPU);
+    public String getName() {
+        return nameCPU;
     }
 }
