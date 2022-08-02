@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Package implements Box{
 
-    ArrayList<DeviceBuilder> devices = new ArrayList<>();
+    ArrayList<Device> devices = new ArrayList<>();
 
-    public void addToPackage(DeviceBuilder product) {
+    public void addToPackage(Device product) {
         devices.add(product);
     }
 
-    public void removeFromPackage(DeviceBuilder product) {
+    public void removeFromPackage(Device product) {
         devices.remove(product);
     }
 
