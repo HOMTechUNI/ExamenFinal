@@ -1,3 +1,5 @@
+package Composite;
+
 public interface Box {
     void getDescription();
     void getQuantityProducts();

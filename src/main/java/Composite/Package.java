@@ -1,8 +1,10 @@
+package Composite;
+
 import Builder.Device;
 
 import java.util.ArrayList;
 
-public class Package implements Box{
+public class Package implements Box {
 
     ArrayList<Device> devices = new ArrayList<>();
 

@@ -11,8 +11,8 @@ public class PruebaIterator {
     public ArrayList search(Components component,String string) {
         ArrayList<Device> result = new ArrayList<Device>();
         for (Container bo : items) {
-            ArrayList<Package> co = bo.returnArrayList();
-            for (Package pa : co) {
+            ArrayList<Composite.Package> co = bo.returnArrayList();
+            for (Composite.Package pa : co) {
                 ArrayList<Device> de = (ArrayList<Device>) pa.returnArrayList();
                 for (Device computer : de) {
                     //Switch

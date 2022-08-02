@@ -1,4 +1,6 @@
 import Builder.Device;
+import Composite.Box;
+import Composite.Store;
 
 import java.util.ArrayList;
 import java.util.Iterator;
