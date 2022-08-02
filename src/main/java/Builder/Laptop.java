@@ -1,4 +1,6 @@
-public class Laptop implements Device{
+package Builder;
+
+public class Laptop implements Device {
     String motherboard;
     String cpu;
     String ram;

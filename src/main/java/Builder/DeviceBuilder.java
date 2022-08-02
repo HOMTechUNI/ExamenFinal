@@ -1,3 +1,5 @@
+package Builder;
+
 public interface DeviceBuilder {
     void setMotherboard(String motherboard);
     void setCpu(String cpu);

@@ -1,33 +1,38 @@
+package Builder;
+
+import Builder.Desktop;
+import Builder.DeviceBuilder;
+
 public class DesktopBuilder implements DeviceBuilder {
     private Desktop desktop;
 
     @Override
     public void setMotherboard(String motherboard) {
         this.desktop.motherboard = motherboard;
-        System.out.println("Motherboard: " + motherboard);
+        System.out.println("Components.Motherboard: " + motherboard);
     }
 
     @Override
     public void setCpu(String cpu) {
         this.desktop.cpu = cpu;
-        System.out.println("CPU: " + cpu);
+        System.out.println("Components.CPU: " + cpu);
     }
 
     @Override
     public void setRam(String ram) {
         this.desktop.ram = ram;
-        System.out.println("RAM: " + ram);
+        System.out.println("Components.RAM: " + ram);
     }
 
     @Override
     public void setGpu(String gpu) {
         this.desktop.gpu = gpu;
-        System.out.println("GPU: " + gpu);
+        System.out.println("Components.GPU: " + gpu);
     }
 
     public void setPsu(String psu) {
         this.desktop.psu = psu;
-        System.out.println("PSU: " + psu);
+        System.out.println("Components.PSU: " + psu);
     }
 
     public Desktop returnDesktop() {

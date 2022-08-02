@@ -1,3 +1,7 @@
+package Components;
+
+import Components.Component;
+
 public class Storage implements Component {
     String IDStorage;
     String nameStorage;
@@ -15,6 +19,6 @@ public class Storage implements Component {
 
     @Override
     public void getName() {
-        System.out.println("Storage name: " + nameStorage);
+        System.out.println("Components.Storage name: " + nameStorage);
     }
 }

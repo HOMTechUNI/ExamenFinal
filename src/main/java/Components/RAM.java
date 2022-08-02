@@ -1,3 +1,7 @@
+package Components;
+
+import Components.Component;
+
 public class RAM implements Component {
     String IDRAM;
     String nameRAM;
@@ -15,6 +19,6 @@ public class RAM implements Component {
 
     @Override
     public void getName() {
-        System.out.println("RAM name: " + nameRAM);
+        System.out.println("Components.RAM name: " + nameRAM);
     }
 }

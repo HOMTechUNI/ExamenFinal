@@ -1,3 +1,7 @@
+package Components;
+
+import Components.Component;
+
 public class PSU implements Component {
     String IDPSU;
     String namePSU;
@@ -13,6 +17,6 @@ public class PSU implements Component {
 
     @Override
     public void getName() {
-        System.out.println("PSU name: " + namePSU);
+        System.out.println("Components.PSU name: " + namePSU);
     }
 }

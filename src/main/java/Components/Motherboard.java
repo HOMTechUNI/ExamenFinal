@@ -1,3 +1,5 @@
+package Components;
+
 public class Motherboard {
     String IDMotherboard;
     String nameMotherboard;

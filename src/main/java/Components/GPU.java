@@ -1,3 +1,7 @@
+package Components;
+
+import Components.Component;
+
 public class GPU implements Component {
     String IDGPU;
     String nameGPU;
@@ -15,6 +19,6 @@ public class GPU implements Component {
 
     @Override
     public void getName() {
-        System.out.println("GPU name: " + nameGPU);
+        System.out.println("Components.GPU name: " + nameGPU);
     }
 }

@@ -1,4 +1,8 @@
-public class Desktop implements Device{
+package Builder;
+
+import Builder.Device;
+
+public class Desktop implements Device {
     String motherboard;
     String cpu;
     String ram;

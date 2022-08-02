@@ -1,3 +1,7 @@
+package Components;
+
+import Components.Component;
+
 public class CPU implements Component {
     String IDCPU;
     String nameCPU;
@@ -13,6 +17,6 @@ public class CPU implements Component {
 
     @Override
     public void getName() {
-        System.out.println("CPU name: " + nameCPU);
+        System.out.println("Components.CPU name: " + nameCPU);
     }
 }
