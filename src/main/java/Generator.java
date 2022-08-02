@@ -38,4 +38,34 @@ public class Generator {
         cpus.add(new CPU("CPU9", "AMD Ryzen Threadripper 3960X", "desktop", 1399.00));
         cpus.add(new CPU("CPU10", "Intel Core i5-11600KF", "desktop", 237.99));
     }
+
+    public void addGPUs() {
+        //laptop
+        gpus.add(new GPU("GPU1", "NVIDIA GeForce RTX 3080 Ti Laptop GPU", "12GB", "laptop", 457.99));
+        gpus.add(new GPU("GPU2", "NVIDIA GeForce GTX 1080 SLI", "12GB", "laptop", 352.99));
+        gpus.add(new GPU("GPU3", "Apple M1 8-Core", "8GB", "laptop", 2130.00));
+        gpus.add(new GPU("GPU4", "NVIDIA GeForce RTX 2080", "8GB", "laptop", 2003.99));
+        gpus.add(new GPU("GPU5", "AMD Radeon RX 6800S", "6GB", "laptop", 698.99));
+        //desktop
+        gpus.add(new GPU("GPU6", "Radeon RX 6950 XT", "12GB", "desktop", 799.99));
+        gpus.add(new GPU("GPU7", "GeForce RTX 3090 Ti", "24GB", "desktop", 2269.99));
+        gpus.add(new GPU("GPU8", "NVIDIA Titan RTX", "8GB", "desktop", 3398.99));
+        gpus.add(new GPU("GPU9", "GeForce GTX 1650", "8GB", "desktop", 209.99));
+        gpus.add(new GPU("GPU10", "Radeon RX 6900 XT OC", "6GB", "desktop", 1019.99));
+    }
+
+    public void addStorages() {
+        //laptop
+        storages.add(new Storage("STRG1", "Samsung 970 Evo Plus NVMe", "1TB", "laptop", 105.99));
+        storages.add(new Storage("STRG2", "HP EX950", "2TB", "laptop", 190.99));
+        storages.add(new Storage("STRG3", "Adata XPG SX8200 Pro", "1TB", "laptop", 59.99));
+        storages.add(new Storage("STRG4", "Crucial P1 3D", "2TB", "laptop", 100.99));
+        storages.add(new Storage("STRG5", "Gigabyte Aorus", "1TB", "laptop", 188.00));
+        //desktop
+        storages.add(new Storage("STRG6", "Samsung 870 EVO", "512GB", "desktop", 100.00));
+        storages.add(new Storage("STRG7", "Crucial MX300", "275GB", "desktop", 74.99));
+        storages.add(new Storage("STRG8", "HyperX Fury", "120GB", "desktop", 98.99));
+        storages.add(new Storage("STRG9", "OCZ ARC 100", "1TB", "desktop", 153.00));
+        storages.add(new Storage("STRG10", "Samsung 960", "2TB", "desktop", 265.99));
+    }
 }
