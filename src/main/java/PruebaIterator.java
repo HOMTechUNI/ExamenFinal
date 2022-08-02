@@ -1,3 +1,5 @@
+import Composite.Store;
+
 import java.util.ArrayList;
 
 public class PruebaIterator {
