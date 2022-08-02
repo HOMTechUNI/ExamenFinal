@@ -33,4 +33,11 @@ public class DesktopBuilder implements DeviceBuilder {
     public Desktop returnDesktop() {
         return this.desktop;
     }
+    public void buildDesktop(String motherboard, String cpu, String ram, String gpu, String psu){
+        setMotherboard(motherboard);
+        setCpu(cpu);
+        setRam(ram);
+        setGpu(gpu);
+        setPsu(psu);
+    }
 }

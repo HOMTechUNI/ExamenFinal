@@ -1,29 +1,29 @@
 import java.util.ArrayList;
 
 public class Store implements Box{
-        ArrayList<Box> boxes = new ArrayList<>();
+        ArrayList<Package> packages = new ArrayList<>();
 
-        public void addToCompound(Box box) {
-            boxes.add(box);
+        public void addToContainer(Package packages1) {
+                packages.add(packages1);
         }
 
-        public void removeFromCompound(Box box) {
-            boxes.remove(box);
+        public void removefromContainer(Package packages1) {
+                packages.remove(packages1);
         }
 
         @Override
         public void getDescription() {
-            //aaaa
+                //aaaaaaaa
         }
 
         @Override
         public void getQuantityProducts() {
-            System.out.println("Esta caja contiene "+boxes.size()+" dispositivos");
+                System.out.println("Este Container contiene " + packages.size() + " cajas");
         }
 
         @Override
-        public void display(){
-            //aaaaaaaaaaa
+        public void display() {
+                //aaaaaaaaaaa
         }
 
 }
