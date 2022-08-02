@@ -31,4 +31,8 @@ public class Package implements Box {
         //aaaaaaaaaaa
     }
 
+    public ArrayList<Device> returnArrayList() {
+        return devices;
+    }
+
 }
