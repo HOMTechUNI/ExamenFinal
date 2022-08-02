@@ -1,5 +1,13 @@
 public class LaptopBuilder implements DeviceBuilder{
     private Laptop laptop;
+
+    public void buildLaptop(String motherboard, String cpu, String ram, String gpu){
+        setMotherboard(motherboard);
+        setCpu(cpu);
+        setRam(ram);
+        setGpu(gpu);
+    }
+
     @Override
     public void setMotherboard(String motherboard) {
         this.laptop.motherboard = motherboard;
