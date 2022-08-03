@@ -13,34 +13,32 @@ public class ComponentsTest {
 
     @Test
     public  void  testGetNameCPU(){
-        cpu=new CPU("1","nameCPU","type",100.0);//String cpuId, String nameCPU, String type, Double price
+        cpu=new CPU("1","nameCPU","type",100.0);
         Assert.assertEquals(cpu.getName(),"nameCPU");
     }
     @Test
     public  void  testGetNameGPU(){
-        cpu=new CPU("1","nameCPU","type",100.0);//String cpuId, String nameCPU, String type, Double price
-        Assert.assertEquals(cpu.getName(),"nameCPU");
+        gpu=new GPU("1","nameGPU","Memory","type",100.0);
+        Assert.assertEquals(gpu.getName(),"nameGPU");
     }
     @Test
     public  void  testGetNameMotherBoard(){
-        cpu=new CPU("1","nameCPU","type",100.0);//String cpuId, String nameCPU, String type, Double price
-        Assert.assertEquals(cpu.getName(),"nameCPU");
+        motherboard=new Motherboard("1","nameMotherboard","type",100.0);
+        Assert.assertEquals(motherboard.getName(),"nameMotherboard");
     }
     @Test
     public  void  testGetNamePSU(){
-        cpu=new CPU("1","nameCPU","type",100.0);//String cpuId, String nameCPU, String type, Double price
-        Assert.assertEquals(cpu.getName(),"nameCPU");
+        psu=new PSU("1","namePSU","type",100.0);
+        Assert.assertEquals(psu.getName(),"namePSU");
     }
     @Test
     public  void  testGetNameRAM(){
-        cpu=new CPU("1","nameCPU","type",100.0);//String cpuId, String nameCPU, String type, Double price
-        Assert.assertEquals(cpu.getName(),"nameCPU");
+        ram=new RAM("1","nameRAM","Memory","type",100.0);
+        Assert.assertEquals(ram.getName(),"nameRAM");
     }
     @Test
     public  void  testGetNameStorage(){
-        storage=new Storage("1","nameCPU","memory","type",100.0);
-        Assert.assertEquals(cpu.getName(),"nameCPU");
+        storage=new Storage("1","nameStorage","memory","type",100.0);
+        Assert.assertEquals(storage.getName(),"nameStorage");
     }
-
-
 }
