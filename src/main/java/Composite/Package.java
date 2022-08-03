@@ -23,13 +23,14 @@ public class Package implements Box {
 
     @Override
     public void getQuantityProducts() {
-        System.out.println("Esta caja contiene "+devices.size()+" dispositivos");
+        System.out.println("Esta caja contiene " + devices.size() + " dispositivos");
     }
 
     @Override
-    public void display(){
+    public void display() {
         //aaaaaaaaaaa
     }
+
     @Override
     public ArrayList<Device> returnArrayList() {
         return devices;

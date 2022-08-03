@@ -19,14 +19,17 @@ public class Desktop implements Device {
         this.storage = new Storage();
         this.gpu = new GPU();
     }
+
     @Override
     public Motherboard getMotherboard() {
         return motherboard;
     }
+
     @Override
     public CPU getCpu() {
         return cpu;
     }
+
     @Override
     public RAM getRam() {
         return ram;
@@ -36,10 +39,12 @@ public class Desktop implements Device {
     public Storage getStorage() {
         return storage;
     }
+
     @Override
     public GPU getGpu() {
         return gpu;
     }
+
     @Override
     public ArrayList<String> allComponents() {
         ArrayList<String> allNameComponents = new ArrayList<>();
