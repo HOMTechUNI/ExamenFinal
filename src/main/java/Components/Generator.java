@@ -158,7 +158,7 @@ public class Generator {
                     Desktop desktop1 = gen.createDesktop();
                     package1.addToPackage(desktop1);
                 }
-                store.addToContainer(package1);
+                store.addToStore(package1);
             }
             storesList.add(store);
         }
