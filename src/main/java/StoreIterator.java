@@ -27,14 +27,14 @@ public class StoreIterator {
                 ArrayList<Device> devices = packages.returnArrayList();
                 for (Device computer : devices) {
                     if(computer.getClass()==Laptop.class) {
+                        int cont = 0, find = 0;
                         for (int p = 0; p < search.size(); p++) {
-                            int cont = 0, find = 0;
                             if (search.get(p) != "--") {
                                 cont++;
                                 if (computer.allComponents().get(p) == search.get(p)) find++;
                             }
-                            if (cont == find) result.add(computer);
                         }
+                        if (cont == find&& find>0 && cont>0) result.add(computer);
                     }
                 }
             }
@@ -49,14 +49,14 @@ public class StoreIterator {
                 ArrayList<Device> devices = packages.returnArrayList();
                 for (Device computer : devices) {
                     if(computer.getClass()==Desktop.class) {
+                        int cont = 0, find = 0;
                         for (int p = 0; p < search.size(); p++) {
-                            int cont = 0, find = 0;
                             if (search.get(p) != "--") {
                                 cont++;
                                 if (computer.allComponents().get(p) == search.get(p)) find++;
                             }
-                            if (cont == find) result.add(computer);
                         }
+                        if (cont == find&& find>0 && cont>0) result.add(computer);
                     }
                 }
             }
