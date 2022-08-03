@@ -1,5 +1,6 @@
+package ComponentsTest;
+
 import Components.*;
-import Composite.Store;
 import org.junit.Assert;
 import org.junit.Test;
 

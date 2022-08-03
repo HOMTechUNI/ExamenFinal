@@ -1,3 +1,5 @@
+package BuilderTests;
+
 import Builder.Desktop;
 import Builder.DesktopBuilder;
 import Components.*;

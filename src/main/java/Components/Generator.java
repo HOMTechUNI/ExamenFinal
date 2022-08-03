@@ -1,8 +1,9 @@
+package Components;
+
 import Builder.Desktop;
 import Builder.DesktopBuilder;
 import Builder.Laptop;
 import Builder.LaptopBuilder;
-import Components.*;
 import Composite.Package;
 import Composite.Store;
 
@@ -78,17 +79,17 @@ public class Generator {
 
     public void addStorages() {
         //laptop
-        storages.add(new Storage("STRG1", "Samsung 970 Evo Plus NVMe", "1TB", "laptop", 105.99));
-        storages.add(new Storage("STRG2", "HP EX950", "2TB", "laptop", 190.99));
-        storages.add(new Storage("STRG3", "Adata XPG SX8200 Pro", "1TB", "laptop", 59.99));
-        storages.add(new Storage("STRG4", "Crucial P1 3D", "2TB", "laptop", 100.99));
-        storages.add(new Storage("STRG5", "Gigabyte Aorus", "1TB", "laptop", 188.00));
+        storages.add(new Storage("STR1", "Samsung 970 Evo Plus NVMe", "1TB", "laptop", 105.99));
+        storages.add(new Storage("STR2", "HP EX950", "2TB", "laptop", 190.99));
+        storages.add(new Storage("STR3", "Adata XPG SX8200 Pro", "1TB", "laptop", 59.99));
+        storages.add(new Storage("STR4", "Crucial P1 3D", "2TB", "laptop", 100.99));
+        storages.add(new Storage("STR5", "Gigabyte Aorus", "1TB", "laptop", 188.00));
         //desktop
-        storages.add(new Storage("STRG6", "Samsung 870 EVO", "512GB", "desktop", 100.00));
-        storages.add(new Storage("STRG7", "Crucial MX300", "275GB", "desktop", 74.99));
-        storages.add(new Storage("STRG8", "HyperX Fury", "120GB", "desktop", 98.99));
-        storages.add(new Storage("STRG9", "OCZ ARC 100", "1TB", "desktop", 153.00));
-        storages.add(new Storage("STRG10", "Samsung 960", "2TB", "desktop", 265.99));
+        storages.add(new Storage("STR6", "Samsung 870 EVO", "512GB", "desktop", 100.00));
+        storages.add(new Storage("STR7", "Crucial MX300", "275GB", "desktop", 74.99));
+        storages.add(new Storage("STR8", "HyperX Fury", "120GB", "desktop", 98.99));
+        storages.add(new Storage("STR9", "OCZ ARC 100", "1TB", "desktop", 153.00));
+        storages.add(new Storage("STR10", "Samsung 960", "2TB", "desktop", 265.99));
     }
 
     public void addPSUs() {
