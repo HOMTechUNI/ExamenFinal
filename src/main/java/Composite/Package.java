@@ -17,21 +17,6 @@ public class Package implements Box {
     }
 
     @Override
-    public void getDescription() {
-        //aaaaaaaa
-    }
-
-    @Override
-    public void getQuantityProducts() {
-        System.out.println("Esta caja contiene " + devices.size() + " dispositivos");
-    }
-
-    @Override
-    public void display() {
-        //aaaaaaaaaaa
-    }
-
-    @Override
     public ArrayList<Device> returnArrayList() {
         return devices;
     }

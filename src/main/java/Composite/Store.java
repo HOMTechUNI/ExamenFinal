@@ -14,21 +14,6 @@ public class Store implements Box {
     }
 
     @Override
-    public void getDescription() {
-        //aaaaaaaa
-    }
-
-    @Override
-    public void getQuantityProducts() {
-        System.out.println("Este Container contiene " + packages.size() + " cajas");
-    }
-
-    @Override
-    public void display() {
-        //aaaaaaaaaaa
-    }
-
-    @Override
     public ArrayList<Package> returnArrayList() {
         return packages;
     }
