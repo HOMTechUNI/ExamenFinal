@@ -18,7 +18,7 @@ public class Generator {
     ArrayList<PSU> psus = new ArrayList<>();
     ArrayList<RAM> rams = new ArrayList<>();
 
-    public Generator(){
+    public Generator() {
         addMotherboards();
         addCPUs();
         addGPUs();
@@ -145,10 +145,10 @@ public class Generator {
         return desktop.returnDesktop();
     }
 
-    public ArrayList<Store> genStoresPackagesDevices(int stores, int packages, int devices){
+    public ArrayList<Store> genStoresPackagesDevices(int stores, int packages, int devices) {
         Generator gen = new Generator();
         ArrayList<Store> storesList = new ArrayList<>();
-        for (int i = 0; i < stores ; i++) {
+        for (int i = 0; i < stores; i++) {
             Store store = new Store();
             for (int j = 0; j < packages; j++) {
                 Package package1 = new Package();

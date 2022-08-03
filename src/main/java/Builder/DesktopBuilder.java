@@ -5,7 +5,7 @@ import Components.*;
 public class DesktopBuilder implements DeviceBuilder {
     private Desktop desktop = new Desktop();
 
-    public void buildDesktop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu, PSU psu){
+    public void buildDesktop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu, PSU psu) {
         setMotherboard(motherboard);
         setCpu(cpu);
         setRam(ram);

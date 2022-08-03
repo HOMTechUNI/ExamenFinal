@@ -13,6 +13,7 @@ public class CPU implements Component {
         this.type = "";
         this.price = 0.0;
     }
+
     public CPU(String cpuId, String nameCPU, String type, Double price) {
         this.cpuId = cpuId;
         this.nameCPU = nameCPU;

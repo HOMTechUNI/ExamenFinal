@@ -5,7 +5,7 @@ import Components.*;
 public class LaptopBuilder implements DeviceBuilder {
     private Laptop laptop = new Laptop();
 
-    public void buildLaptop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu){
+    public void buildLaptop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu) {
         setMotherboard(motherboard);
         setCpu(cpu);
         setRam(ram);
@@ -17,10 +17,12 @@ public class LaptopBuilder implements DeviceBuilder {
     public void setMotherboard(Motherboard motherboard) {
         this.laptop.motherboard = motherboard;
     }
+
     @Override
     public void setCpu(CPU cpu) {
         this.laptop.cpu = cpu;
     }
+
     @Override
     public void setRam(RAM ram) {
         this.laptop.ram = ram;
