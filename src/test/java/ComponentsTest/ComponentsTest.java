@@ -13,32 +13,32 @@ public class ComponentsTest {
     Storage storage;
 
     @Test
-    public  void  testGetNameCPU(){
+    public  void  getNameCPUTest(){
         cpu=new CPU("1","nameCPU","type",100.0);
         Assert.assertEquals(cpu.getName(),"nameCPU");
     }
     @Test
-    public  void  testGetNameGPU(){
+    public  void  getNameGPUTest(){
         gpu=new GPU("1","nameGPU","Memory","type",100.0);
         Assert.assertEquals(gpu.getName(),"nameGPU");
     }
     @Test
-    public  void  testGetNameMotherBoard(){
+    public  void  getNameMotherBoardTest(){
         motherboard=new Motherboard("1","nameMotherboard","type",100.0);
         Assert.assertEquals(motherboard.getName(),"nameMotherboard");
     }
     @Test
-    public  void  testGetNamePSU(){
+    public  void  getNamePSUTest(){
         psu=new PSU("1","namePSU","type",100.0);
         Assert.assertEquals(psu.getName(),"namePSU");
     }
     @Test
-    public  void  testGetNameRAM(){
+    public  void  getNameRAMTest(){
         ram=new RAM("1","nameRAM","Memory","type",100.0);
         Assert.assertEquals(ram.getName(),"nameRAM");
     }
     @Test
-    public  void  testGetNameStorage(){
+    public  void  getNameStorageTest(){
         storage=new Storage("1","nameStorage","memory","type",100.0);
         Assert.assertEquals(storage.getName(),"nameStorage");
     }
