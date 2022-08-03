@@ -28,13 +28,14 @@ public class ClientGUI extends javax.swing.JFrame {
     private javax.swing.JLabel ramLabel;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel storageLabel;
+
     public ClientGUI() {
         ArrayList<Store> stores = generator.genStoresPackagesDevices(10, 10, 10);
         storeIterator.setStore(stores);
         initComponents();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
