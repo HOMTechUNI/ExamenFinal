@@ -233,7 +233,7 @@ public class GUI extends javax.swing.JFrame {
             searchList.add(jComboBoxStorage.getSelectedItem().toString());
             searchList.add(jComboBoxGPU.getSelectedItem().toString());
 
-            /*ArrayList<Laptop> laptops =storeIterator.search(searchList);
+            ArrayList<Laptop> laptops =storeIterator.searchLaptop(searchList);
 
             DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
                     "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
@@ -242,7 +242,7 @@ public class GUI extends javax.swing.JFrame {
                 modelLaptop.addRow(new Object[]{laptop.getMotherboard().getName(),laptop.getCpu().getName(),laptop.getRam().getName(),laptop.getGpu().getName(),laptop.getStorage().getName(), ""});
             }
             jTable1.setModel(modelLaptop);
-            */
+
         } else if (desktopRadioButton.isSelected()) {
             ArrayList<String> searchList = new ArrayList<>();
             searchList.add(jComboBoxMotherboard.getSelectedItem().toString());
