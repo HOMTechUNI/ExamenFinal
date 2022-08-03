@@ -29,7 +29,7 @@ public class StoreIterator {
                     if(computer.getClass()==Laptop.class) {
                         int cont = 0, find = 0;
                         for (int p = 0; p < search.size(); p++) {
-                            if (search.get(p) != "--") {
+                            if (search.get(p) != "Seleccione el componente") {
                                 cont++;
                                 if (computer.allComponents().get(p) == search.get(p)) find++;
                             }
@@ -51,7 +51,7 @@ public class StoreIterator {
                     if(computer.getClass()==Desktop.class) {
                         int cont = 0, find = 0;
                         for (int p = 0; p < search.size(); p++) {
-                            if (search.get(p) != "--") {
+                            if (search.get(p) != "Seleccione el componente") {
                                 cont++;
                                 if (computer.allComponents().get(p) == search.get(p)) find++;
                             }
