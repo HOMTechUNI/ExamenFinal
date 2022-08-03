@@ -1,7 +1,5 @@
 package Components;
 
-import Components.Component;
-
 public class GPU implements Component {
     String gpuId;
     String nameGPU;

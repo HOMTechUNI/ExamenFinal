@@ -1,4 +1,5 @@
 import Components.*;
+
 import java.util.ArrayList;
 
 public class Generator {
@@ -39,6 +40,20 @@ public class Generator {
         cpus.add(new CPU("CPU10", "Intel Core i5-11600KF", "desktop", 237.99));
     }
 
+    public void addGPUs() {
+        //laptop
+        gpus.add(new GPU("GPU1", "NVIDIA GeForce RTX 3080 Ti Laptop GPU", "12GB", "laptop", 457.99));
+        gpus.add(new GPU("GPU2", "NVIDIA GeForce GTX 1080 SLI", "12GB", "laptop", 352.99));
+        gpus.add(new GPU("GPU3", "Apple M1 8-Core", "8GB", "laptop", 2130.00));
+        gpus.add(new GPU("GPU4", "NVIDIA GeForce RTX 2080", "8GB", "laptop", 2003.99));
+        gpus.add(new GPU("GPU5", "AMD Radeon RX 6800S", "6GB", "laptop", 698.99));
+        //desktop
+        gpus.add(new GPU("GPU6", "Radeon RX 6950 XT", "12GB", "desktop", 799.99));
+        gpus.add(new GPU("GPU7", "GeForce RTX 3090 Ti", "24GB", "desktop", 2269.99));
+        gpus.add(new GPU("GPU8", "NVIDIA Titan RTX", "8GB", "desktop", 3398.99));
+        gpus.add(new GPU("GPU9", "GeForce GTX 1650", "8GB", "desktop", 209.99));
+        gpus.add(new GPU("GPU10", "Radeon RX 6900 XT OC", "6GB", "desktop", 1019.99));
+    }
 
     public void addStorages() {
         //laptop
@@ -55,7 +70,7 @@ public class Generator {
         storages.add(new Storage("STRG10", "Samsung 960", "2TB", "desktop", 265.99));
     }
 
-    public void addPSUs(){
+    public void addPSUs() {
         //laptop
         psus.add(new PSU("PSU1", "Corsair CX450", "laptop", 59.99));
         psus.add(new PSU("PSU2", "Corsair CX550F", "laptop", 62.10));

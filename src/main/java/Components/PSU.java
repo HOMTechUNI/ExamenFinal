@@ -1,7 +1,5 @@
 package Components;
 
-import Components.Component;
-
 public class PSU implements Component {
     String psuId;
     String namePSU;
