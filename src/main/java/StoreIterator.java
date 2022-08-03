@@ -41,6 +41,28 @@ public class StoreIterator {
         }
         return result;
     }
+    public ArrayList searchDesktop(ArrayList<String> search) {
+        ArrayList<Device> result = new ArrayList<Device>();
+        for (Store store : items) {
+            ArrayList<Package> co = store.returnArrayList();
+            for (Package packages : co) {
+                ArrayList<Device> devices = packages.returnArrayList();
+                for (Device computer : devices) {
+                    if(computer.getClass()==Desktop.class) {
+                        for (int p = 0; p < search.size(); p++) {
+                            int cont = 0, find = 0;
+                            if (search.get(p) != "--") {
+                                cont++;
+                                if (computer.allComponents().get(p) == search.get(p)) find++;
+                            }
+                            if (cont == find) result.add(computer);
+                        }
+                    }
+                }
+            }
+        }
+        return result;
+    }
     public ArrayList returnAllLaptops() {
         ArrayList<Laptop> result = new ArrayList<>();
         for (int i=0 ; i < items.size() ; i++) {
