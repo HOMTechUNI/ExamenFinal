@@ -3,7 +3,7 @@ package Builder;
 import Components.*;
 
 public class DesktopBuilder implements DeviceBuilder {
-    private Desktop desktop;
+    private Desktop desktop = new Desktop();
 
     public void buildDesktop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu, PSU psu){
         setMotherboard(motherboard);

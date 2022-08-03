@@ -3,7 +3,7 @@ package Builder;
 import Components.*;
 
 public class LaptopBuilder implements DeviceBuilder {
-    private Laptop laptop;
+    private Laptop laptop = new Laptop();
 
     public void buildLaptop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu){
         setMotherboard(motherboard);

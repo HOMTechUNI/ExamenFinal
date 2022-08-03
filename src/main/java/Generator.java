@@ -17,10 +17,20 @@ public class Generator {
     ArrayList<PSU> psus = new ArrayList<>();
     ArrayList<RAM> rams = new ArrayList<>();
 
+    public Generator(){
+        addMotherboards();
+        addCPUs();
+        addGPUs();
+        addPSUs();
+        addRAMs();
+        addStorages();
+    }
+
     public int getRandomNumberUsingNextInt(int min, int max) {
         Random rand = new Random();
         return rand.nextInt(max - min) + min;
     }
+
     public void addMotherboards() {
         //laptop
         motherboards.add(new Motherboard("MB1", "Apple MacBook Pro Motherboard", "laptop", 328.65));
