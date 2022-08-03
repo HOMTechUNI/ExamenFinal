@@ -5,12 +5,13 @@ import Components.*;
 public class DesktopBuilder implements DeviceBuilder {
     private Desktop desktop;
 
-    public void buildDesktop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu){
+    public void buildDesktop(Motherboard motherboard, CPU cpu, RAM ram, Storage storage, GPU gpu, PSU psu){
         setMotherboard(motherboard);
         setCpu(cpu);
         setRam(ram);
         setStorage(storage);
         setGpu(gpu);
+        setPsu(psu);
     }
 
     @Override

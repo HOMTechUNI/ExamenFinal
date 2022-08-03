@@ -1,6 +1,13 @@
+import Builder.Desktop;
+import Builder.DesktopBuilder;
+import Builder.Laptop;
+import Builder.LaptopBuilder;
 import Components.*;
+import Composite.Package;
+import Composite.Store;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Generator {
     ArrayList<Motherboard> motherboards = new ArrayList<>();
@@ -10,6 +17,10 @@ public class Generator {
     ArrayList<PSU> psus = new ArrayList<>();
     ArrayList<RAM> rams = new ArrayList<>();
 
+    public int getRandomNumberUsingNextInt(int min, int max) {
+        Random rand = new Random();
+        return rand.nextInt(max - min) + min;
+    }
     public void addMotherboards() {
         //laptop
         motherboards.add(new Motherboard("MB1", "Apple MacBook Pro Motherboard", "laptop", 328.65));
@@ -98,5 +109,48 @@ public class Generator {
         rams.add(new RAM("RAM8", "Kingston FURY Renegade", "desktop", "32GB", 459.99));
         rams.add(new RAM("RAM9", "Teamgroup T-Force Vulcan Z", "desktop", "64GB", 69.99));
         rams.add(new RAM("RAM10", "G.Skill Ripjaws Serie V", "desktop", "128GB", 96.99));
+    }
+
+    public Laptop createLaptop() {
+        int random0 = getRandomNumberUsingNextInt(0, 4);
+        int random1 = getRandomNumberUsingNextInt(0, 4);
+        int random2 = getRandomNumberUsingNextInt(0, 4);
+        int random3 = getRandomNumberUsingNextInt(0, 4);
+        int random4 = getRandomNumberUsingNextInt(0, 4);
+        LaptopBuilder laptopComputer = new LaptopBuilder();
+        laptopComputer.buildLaptop(motherboards.get(random0), cpus.get(random1), rams.get(random2), storages.get(random3), gpus.get(random4));
+        return laptopComputer.returnLaptop();
+    }
+
+    public Desktop createDesktop() {
+        int random0 = getRandomNumberUsingNextInt(5, 9);
+        int random1 = getRandomNumberUsingNextInt(5, 9);
+        int random2 = getRandomNumberUsingNextInt(5, 9);
+        int random3 = getRandomNumberUsingNextInt(5, 9);
+        int random4 = getRandomNumberUsingNextInt(5, 9);
+        int random5 = getRandomNumberUsingNextInt(5, 9);
+        DesktopBuilder desktop = new DesktopBuilder();
+        desktop.buildDesktop(motherboards.get(random0), cpus.get(random1), rams.get(random2), storages.get(random3), gpus.get(random4), psus.get(random5));
+        return desktop.returnDesktop();
+    }
+
+    public ArrayList<Store> genStoresPackagesDevices(int stores, int packages, int devices){
+        Generator gen = new Generator();
+        ArrayList<Store> storesList = new ArrayList<>();
+        for (int i = 0; i < stores ; i++) {
+            Store store = new Store();
+            for (int j = 0; j < packages; j++) {
+                Package package1 = new Package();
+                for (int k = 0; k < devices; k++) {
+                    Laptop laptop1 = gen.createLaptop();
+                    package1.addToPackage(laptop1);
+                    Desktop desktop1 = gen.createDesktop();
+                    package1.addToPackage(desktop1);
+                }
+                store.addToContainer(package1);
+            }
+            storesList.add(store);
+        }
+        return storesList;
     }
 }

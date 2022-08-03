@@ -1,4 +1,6 @@
+import Builder.Desktop;
 import Builder.Device;
+import Builder.Laptop;
 import Composite.Package;
 import Composite.Store;
 
@@ -13,6 +15,10 @@ public class StoreIterator {
         items.add(box);
     }
 
+    public void setStore(ArrayList<Store> store){
+        items = store;
+    }
+
     public ArrayList search(String string) {
         ArrayList<Device> result = new ArrayList<Device>();
         for (Store store : items) {
@@ -22,6 +28,58 @@ public class StoreIterator {
                 for (Device computer : devices) {
                     if (computer.allComponents().contains(string)) {
                         result.add(computer);
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    public ArrayList returnAllLaptops() {
+        ArrayList<Laptop> result = new ArrayList<>();
+        for (int i=0 ; i < items.size() ; i++) {
+            int aux = items.get(i).returnArrayList().size();
+            ArrayList<Package> packages = items.get(i).returnArrayList();
+            for (int j=0 ; j < aux; j++) {
+                int aux2 = packages.get(j).returnArrayList().size();
+                ArrayList<Device> devices = packages.get(j).returnArrayList();
+                for (int k=0 ; k < aux2; k++) {
+                    if (devices.get(k).getClass() == Laptop.class){
+                        result.add((Laptop) devices.get(k));
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    /*
+    public ArrayList returnAllLaptops() {
+        ArrayList<Laptop> result = new ArrayList<>();
+        for (Store store : items) {
+            ArrayList<Package> co = store.returnArrayList();
+            for (Package packages : co) {
+                ArrayList<Device> devices = packages.returnArrayList();
+                for (Device computer : devices) {
+                        if (computer.getClass() == Laptop.class){
+                            result.add((Laptop) computer);
+                        }
+                    }
+                }
+            }
+        System.out.println(result.size());
+        return result;
+    }
+    */
+    public ArrayList returnAllDesktops() {
+        ArrayList<Desktop> result = new ArrayList<>();
+        for (Store store : items) {
+            ArrayList<Package> co = store.returnArrayList();
+            for (Package packages : co) {
+                ArrayList<Device> devices = packages.returnArrayList();
+                for (Device computer : devices) {
+                    if (computer.getClass() == Desktop.class){
+                        result.add((Desktop) computer);
                     }
                 }
             }
