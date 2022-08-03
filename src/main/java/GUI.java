@@ -111,12 +111,12 @@ public class GUI extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jTable1);
 
-        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
-        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
-        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
-        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
-        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
-        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
+        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
+        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
+        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
+        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
+        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
+        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,23 +135,23 @@ public class GUI extends javax.swing.JFrame {
                                                                 .addComponent(storageLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                         .addComponent(psuLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                        .addComponent(jComboBoxMotherboard, 0, 119, Short.MAX_VALUE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addComponent(jComboBoxGPU, 0, 249, Short.MAX_VALUE)
+                                                        .addComponent(jComboBoxPSU, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jComboBoxStorage, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jComboBoxCPU, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                         .addComponent(jComboBoxRAM, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jComboBoxGPU, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jComboBoxPSU, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                        .addComponent(jComboBoxStorage, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                        .addComponent(jComboBoxMotherboard, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(96, 96, 96)
                                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                                        .addComponent(desktopRadioButton)
-                                                                        .addComponent(laptopRadioButton))
-                                                                .addGap(200, 200, 200))
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addGap(122, 122, 122))))
+                                                                        .addComponent(laptopRadioButton)
+                                                                        .addComponent(desktopRadioButton)))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                                .addGap(54, 54, 54)
+                                                                .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGap(75, 75, 75))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 582, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addContainerGap(50, Short.MAX_VALUE))))
@@ -162,10 +162,11 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(65, 65, 65)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
+                                                .addGap(10, 10, 10)
+                                                .addComponent(desktopRadioButton)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(laptopRadioButton)
                                                 .addGap(18, 18, 18)
-                                                .addComponent(desktopRadioButton)
-                                                .addGap(36, 36, 36)
                                                 .addComponent(searchButton, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -201,26 +202,24 @@ public class GUI extends javax.swing.JFrame {
 
     private void laptopRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         desktopRadioButton.setSelected(false);
-        psuLabel.setVisible(false);
-        jComboBoxPSU.setVisible(false);
-        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Apple MacBook Pro Motherboard", "LG Gram 17Z90N Motherboard", "Alienware AW15R3-7002SLV-PUS Motherboard", "Razer Blade Pro 17 Motherboard","Asus ZenBook Flip S 13 Motherboard"}));
-        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Intel Core i7-12700H", "Intel Core i9-12900H", "AMD Ryzen 7 6800H", "AMD Ryzen 9 5900HS","Intel Xeon W-10885M"}));
-        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","G.Skill Trident Z5 RGB","Samsung DDR5-4800", "TeamGroup T-Force Xtreem", "Patriot Viper Steel","Corsair Vengeance RGB Pro"}));
-        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Samsung 970 Evo Plus NVMe","HP EX950", "Adata XPG SX8200 Pro", "Crucial P1 3D","Gigabyte Aorus"}));
-        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "--","NVIDIA GeForce RTX 3080 Ti Laptop GPU","NVIDIA GeForce GTX 1080 SLI", "Apple M1 8-Core", "NVIDIA GeForce RTX 2080","AMD Radeon RX 6800S"}));
+        jComboBoxPSU.setEnabled(false);
+        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Apple MacBook Pro Motherboard", "LG Gram 17Z90N Motherboard", "Alienware AW15R3-7002SLV-PUS Motherboard", "Razer Blade Pro 17 Motherboard","Asus ZenBook Flip S 13 Motherboard"}));
+        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i7-12700H", "Intel Core i9-12900H", "AMD Ryzen 7 6800H", "AMD Ryzen 9 5900HS","Intel Xeon W-10885M"}));
+        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","G.Skill Trident Z5 RGB","Samsung DDR5-4800", "TeamGroup T-Force Xtreem", "Patriot Viper Steel","Corsair Vengeance RGB Pro"}));
+        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 970 Evo Plus NVMe","HP EX950", "Adata XPG SX8200 Pro", "Crucial P1 3D","Gigabyte Aorus"}));
+        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","NVIDIA GeForce RTX 3080 Ti Laptop GPU","NVIDIA GeForce GTX 1080 SLI", "Apple M1 8-Core", "NVIDIA GeForce RTX 2080","AMD Radeon RX 6800S"}));
         jTable1.setModel(modelLaptop);
     }
 
     private void desktopRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         laptopRadioButton.setSelected(false);
-        psuLabel.setVisible(true);
-        jComboBoxPSU.setVisible(true);
-        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
-        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
-        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
-        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
-        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
-        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "--","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
+        jComboBoxPSU.setEnabled(true);
+        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
+        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
+        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
+        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
+        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
+        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
         jTable1.setModel(modelDesktop);
     }
 
@@ -256,12 +255,12 @@ public class GUI extends javax.swing.JFrame {
                     "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
             }, 0);
 
-            /*ArrayList<Desktop> desktops =storeIterator.search(searchList);
+            ArrayList<Desktop> desktops =storeIterator.searchDesktop(searchList);
             for(Desktop desktop : desktops){
                 modelDesktop.addRow(new Object[]{desktop.getMotherboard().getName(),desktop.getCpu().getName(),desktop.getRam().getName(),desktop.getGpu().getName(),desktop.getStorage().getName(), desktop.getPsu().getName()});
             }
             jTable1.setModel(modelDesktop);
-        */}
+        }
     }
 
     private void jComboBoxMotherboardActionPerformed(java.awt.event.ActionEvent evt) {
