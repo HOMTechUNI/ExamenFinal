@@ -14,11 +14,21 @@ public class GUI extends javax.swing.JFrame {
 
     DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
             "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-    }, 0);
+    }, 0){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
 
     DefaultTableModel modelDesktop = new DefaultTableModel(new Object[]{
             "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-    }, 0);
+    }, 0){
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
 
     public GUI() {
         ArrayList<Store> stores=generator.genStoresPackagesDevices(3,5,3);
@@ -107,8 +117,8 @@ public class GUI extends javax.swing.JFrame {
         for(Desktop desktop : desktops){
             modelDesktop.addRow(new Object[]{desktop.getMotherboard().getName(),desktop.getCpu().getName(),desktop.getRam().getName(),desktop.getGpu().getName(),desktop.getStorage().getName(), desktop.getPsu().getName()});
         }
-        jTable1.setModel(modelDesktop);
 
+        jTable1.setModel(modelDesktop);
         jScrollPane1.setViewportView(jTable1);
 
         jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
@@ -236,7 +246,12 @@ public class GUI extends javax.swing.JFrame {
 
             DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
                     "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-            }, 0);
+            }, 0){
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }
+            };
             for(Laptop laptop : laptops){
                 modelLaptop.addRow(new Object[]{laptop.getMotherboard().getName(),laptop.getCpu().getName(),laptop.getRam().getName(),laptop.getGpu().getName(),laptop.getStorage().getName(), ""});
             }
@@ -253,7 +268,12 @@ public class GUI extends javax.swing.JFrame {
 
             DefaultTableModel modelDesktop = new DefaultTableModel(new Object[]{
                     "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-            }, 0);
+            }, 0){
+                @Override
+                public boolean isCellEditable(int row, int column) {
+                    return false;
+                }
+            };
 
             ArrayList<Desktop> desktops =storeIterator.searchDesktop(searchList);
             for(Desktop desktop : desktops){
