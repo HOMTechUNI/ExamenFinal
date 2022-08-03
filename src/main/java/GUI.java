@@ -10,32 +10,11 @@ public class GUI extends javax.swing.JFrame {
     Generator generator = new Generator();
     StoreIterator storeIterator = new StoreIterator();
 
-    ArrayList<String> title = new ArrayList<>();
-
-    DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
-            "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-    }, 0){
-        @Override
-        public boolean isCellEditable(int row, int column) {
-            return false;
-        }
-    };
-
-    DefaultTableModel modelDesktop = new DefaultTableModel(new Object[]{
-            "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-    }, 0){
-        @Override
-        public boolean isCellEditable(int row, int column) {
-            return false;
-        }
-    };
-
     public GUI() {
         ArrayList<Store> stores=generator.genStoresPackagesDevices(3,5,3);
         storeIterator.setStore(stores);
         initComponents();
     }
-
 
     @SuppressWarnings("unchecked")
 
@@ -74,6 +53,7 @@ public class GUI extends javax.swing.JFrame {
                 desktopRadioButtonActionPerformed(evt);
             }
         });
+        setComboBoxModelDesktop();
         desktopRadioButton.setSelected(true);
 
         motherboardLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -99,34 +79,9 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
-
-
-        title.add("Motherboard");
-        title.add("CPU");
-        title.add("RAM");
-        title.add( "GPU");
-        title.add("Storage");
-        title.add("PSU");
-
-        ArrayList<Laptop> laptops =storeIterator.returnAllLaptops();
-        for(Laptop laptop : laptops){
-            modelLaptop.addRow(new Object[]{laptop.getMotherboard().getName(),laptop.getCpu().getName(),laptop.getRam().getName(),laptop.getGpu().getName(),laptop.getStorage().getName(), ""});
-        }
-
         ArrayList<Desktop> desktops =storeIterator.returnAllDesktops();
-        for(Desktop desktop : desktops){
-            modelDesktop.addRow(new Object[]{desktop.getMotherboard().getName(),desktop.getCpu().getName(),desktop.getRam().getName(),desktop.getGpu().getName(),desktop.getStorage().getName(), desktop.getPsu().getName()});
-        }
+        setJTableModelDesktop(desktops);
 
-        jTable1.setModel(modelDesktop);
-        jScrollPane1.setViewportView(jTable1);
-
-        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
-        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
-        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
-        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
-        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
-        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -213,24 +168,17 @@ public class GUI extends javax.swing.JFrame {
     private void laptopRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         desktopRadioButton.setSelected(false);
         jComboBoxPSU.setEnabled(false);
-        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Apple MacBook Pro Motherboard", "LG Gram 17Z90N Motherboard", "Alienware AW15R3-7002SLV-PUS Motherboard", "Razer Blade Pro 17 Motherboard","Asus ZenBook Flip S 13 Motherboard"}));
-        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i7-12700H", "Intel Core i9-12900H", "AMD Ryzen 7 6800H", "AMD Ryzen 9 5900HS","Intel Xeon W-10885M"}));
-        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","G.Skill Trident Z5 RGB","Samsung DDR5-4800", "TeamGroup T-Force Xtreem", "Patriot Viper Steel","Corsair Vengeance RGB Pro"}));
-        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 970 Evo Plus NVMe","HP EX950", "Adata XPG SX8200 Pro", "Crucial P1 3D","Gigabyte Aorus"}));
-        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","NVIDIA GeForce RTX 3080 Ti Laptop GPU","NVIDIA GeForce GTX 1080 SLI", "Apple M1 8-Core", "NVIDIA GeForce RTX 2080","AMD Radeon RX 6800S"}));
-        jTable1.setModel(modelLaptop);
+        setComboBoxModelLaptop();
+        ArrayList<Laptop> laptops =storeIterator.returnAllLaptops();
+        setJTableModelLaptops(laptops);
     }
 
     private void desktopRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
         laptopRadioButton.setSelected(false);
         jComboBoxPSU.setEnabled(true);
-        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
-        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
-        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
-        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
-        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
-        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
-        jTable1.setModel(modelDesktop);
+        setComboBoxModelDesktop();
+        ArrayList<Desktop> desktops =storeIterator.returnAllDesktops();
+        setJTableModelDesktop(desktops);
     }
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {
@@ -241,21 +189,8 @@ public class GUI extends javax.swing.JFrame {
             searchList.add(jComboBoxRAM.getSelectedItem().toString());
             searchList.add(jComboBoxStorage.getSelectedItem().toString());
             searchList.add(jComboBoxGPU.getSelectedItem().toString());
-
             ArrayList<Laptop> laptops =storeIterator.searchLaptop(searchList);
-
-            DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
-                    "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-            }, 0){
-                @Override
-                public boolean isCellEditable(int row, int column) {
-                    return false;
-                }
-            };
-            for(Laptop laptop : laptops){
-                modelLaptop.addRow(new Object[]{laptop.getMotherboard().getName(),laptop.getCpu().getName(),laptop.getRam().getName(),laptop.getGpu().getName(),laptop.getStorage().getName(), ""});
-            }
-            jTable1.setModel(modelLaptop);
+            setJTableModelLaptops(laptops);
 
         } else if (desktopRadioButton.isSelected()) {
             ArrayList<String> searchList = new ArrayList<>();
@@ -265,28 +200,59 @@ public class GUI extends javax.swing.JFrame {
             searchList.add(jComboBoxStorage.getSelectedItem().toString());
             searchList.add(jComboBoxGPU.getSelectedItem().toString());
             searchList.add(jComboBoxPSU.getSelectedItem().toString());
-
-            DefaultTableModel modelDesktop = new DefaultTableModel(new Object[]{
-                    "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
-            }, 0){
-                @Override
-                public boolean isCellEditable(int row, int column) {
-                    return false;
-                }
-            };
-
             ArrayList<Desktop> desktops =storeIterator.searchDesktop(searchList);
-            for(Desktop desktop : desktops){
-                modelDesktop.addRow(new Object[]{desktop.getMotherboard().getName(),desktop.getCpu().getName(),desktop.getRam().getName(),desktop.getGpu().getName(),desktop.getStorage().getName(), desktop.getPsu().getName()});
-            }
-            jTable1.setModel(modelDesktop);
+            setJTableModelDesktop(desktops);
         }
     }
 
-    private void jComboBoxMotherboardActionPerformed(java.awt.event.ActionEvent evt) {
-
+    public void setJTableModelDesktop(ArrayList<Desktop> desktops){
+        DefaultTableModel modelDesktop = new DefaultTableModel(new Object[]{
+                "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
+        }, 0){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        for(Desktop desktop : desktops){
+            modelDesktop.addRow(new Object[]{desktop.getMotherboard().getName(),desktop.getCpu().getName(),desktop.getRam().getName(),desktop.getGpu().getName(),desktop.getStorage().getName(), desktop.getPsu().getName()});
+        }
+        jTable1.setModel(modelDesktop);
+        jScrollPane1.setViewportView(jTable1);
     }
 
+    public void setJTableModelLaptops(ArrayList<Laptop> laptops){
+        DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
+                "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
+        }, 0){
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        for(Laptop laptop : laptops){
+            modelLaptop.addRow(new Object[]{laptop.getMotherboard().getName(),laptop.getCpu().getName(),laptop.getRam().getName(),laptop.getGpu().getName(),laptop.getStorage().getName(), ""});
+        }
+        jTable1.setModel(modelLaptop);
+        jScrollPane1.setViewportView(jTable1);
+    }
+
+    public void setComboBoxModelDesktop(){
+        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
+        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X","Intel Core i5-11600KF"}));
+        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair Vengeance LPX","Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z","G.Skill Ripjaws Serie V"}));
+        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 870 EVO","Crucial MX300", "HyperX Fury", "OCZ ARC 100","Samsung 960"}));
+        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Radeon RX 6950 XT","GeForce RTX 3090 Ti", "NVIDIA Titan RTX", "GeForce GTX 1650","Radeon RX 6900 XT OC"}));
+        jComboBoxPSU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Corsair SF750","SilverStone SX1000 SFX-L", "EVGA SuperNOVA 1600 T2", "Corsair AX1600i","EVGA SuperNOVA 1000 T2"}));
+    }
+
+    public void setComboBoxModelLaptop(){
+        jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Apple MacBook Pro Motherboard", "LG Gram 17Z90N Motherboard", "Alienware AW15R3-7002SLV-PUS Motherboard", "Razer Blade Pro 17 Motherboard","Asus ZenBook Flip S 13 Motherboard"}));
+        jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Intel Core i7-12700H", "Intel Core i9-12900H", "AMD Ryzen 7 6800H", "AMD Ryzen 9 5900HS","Intel Xeon W-10885M"}));
+        jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","G.Skill Trident Z5 RGB","Samsung DDR5-4800", "TeamGroup T-Force Xtreem", "Patriot Viper Steel","Corsair Vengeance RGB Pro"}));
+        jComboBoxStorage.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","Samsung 970 Evo Plus NVMe","HP EX950", "Adata XPG SX8200 Pro", "Crucial P1 3D","Gigabyte Aorus"}));
+        jComboBoxGPU.setModel (new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione el componente","NVIDIA GeForce RTX 3080 Ti Laptop GPU","NVIDIA GeForce GTX 1080 SLI", "Apple M1 8-Core", "NVIDIA GeForce RTX 2080","AMD Radeon RX 6800S"}));
+    }
 
     public static void main(String args[]) {
 
