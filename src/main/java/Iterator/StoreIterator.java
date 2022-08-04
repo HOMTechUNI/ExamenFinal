@@ -14,10 +14,12 @@ public class StoreIterator {
     ArrayList<Store> items = new ArrayList<>();
 
     public void addNewItems(Store box) {
+        assert box != null : "La tienda no puede ser null";
         items.add(box);
     }//método para asignar un objeto Store al ArrayList items
 
     public void setStore(ArrayList<Store> store) {//método para asignar un objeto Store al ArrayList items
+        assert store != null :"El ArrayList de store no puede ser null";
         items = store;
     }
 
