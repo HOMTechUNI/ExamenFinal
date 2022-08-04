@@ -9,7 +9,7 @@ public class Store implements Box {
         packages.add(packages1);
     }
 
-    public void removefromStore(Package packages1) {
+    public void removeFromStore(Package packages1) {
         packages.remove(packages1);
     }
 

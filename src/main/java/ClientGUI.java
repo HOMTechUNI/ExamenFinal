@@ -62,7 +62,6 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
-
     private void initComponents() {
 
         laptopRadioButton = new javax.swing.JRadioButton();

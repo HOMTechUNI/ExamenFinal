@@ -12,6 +12,7 @@ public class Laptop implements Device {
     GPU gpu;
 
     public Laptop() {
+        //Contructor que asigna cada objeto de tipo componente a Laptop
         this.motherboard = new Motherboard();
         this.cpu = new CPU();
         this.ram = new RAM();
@@ -21,32 +22,38 @@ public class Laptop implements Device {
 
     @Override
     public Motherboard getMotherboard() {
+        //Retorna el objeto motherboard de Laptop
         return motherboard;
     }
 
     @Override
     public CPU getCpu() {
+        //Retorna el objeto cpu de Laptop
         return cpu;
     }
 
     @Override
     public RAM getRam() {
+        //Retorna el objeto ram de Laptop
         return ram;
     }
 
     @Override
     public Storage getStorage() {
+        //Retorna el objeto storage de Laptop
         return storage;
     }
 
     @Override
     public GPU getGpu() {
+        //Retorna el objeto gpu de Laptop
         return gpu;
     }
 
     @Override
     public ArrayList<String> allComponents() {
-
+        //Retorna un arraylist que contiene los nombres
+        // de todos los componentes que se encuentran en Laptop
         ArrayList<String> allNameComponents = new ArrayList<>();
         allNameComponents.add(motherboard.getName());
         allNameComponents.add(cpu.getName());
