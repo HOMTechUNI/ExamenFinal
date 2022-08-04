@@ -83,7 +83,7 @@ public class ClientGUI extends javax.swing.JFrame {
         jComboBoxPSU = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
+        setTitle("Nombre");
         laptopRadioButton.setText("Laptop");
         laptopRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -210,6 +210,9 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     private void laptopRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        //Este método se acciona cuando el laptopRadioButtonAction es seleccionado,
+        // haciendo que se deshabilite el jComboBoxPSU  y a su vez en el jTable1
+        // se muestran todas las laptops disponibles.
         desktopRadioButton.setSelected(false);
         jComboBoxPSU.setEnabled(false);
         setComboBoxModelLaptop();
@@ -218,6 +221,9 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     private void desktopRadioButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        //Este método se acciona cuando el desktopRadioButtonAction es seleccionado,
+        // haciendo que se habilite el jComboBoxPSU  y a su vez en el jTable1 se
+        // muestran todas las desktop disponibles.
         laptopRadioButton.setSelected(false);
         jComboBoxPSU.setEnabled(true);
         setComboBoxModelDesktop();
@@ -226,6 +232,12 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        //Este método se acciona cuando se pulsa searchButton tiene como condición
+        // que laptopRadioButton o desktopRadioButton, dependiendo de lo
+        // seleccionado todos los nombres de los componentes seleccionados en
+        // los jComboBox son añadidos al ArrayList searchList y serán usados
+        // para la búsqueda a modo de filtro, para encontrar coincidencias
+        // y posteriormente mostralas en el jTable1.
         if (laptopRadioButton.isSelected()) {
             ArrayList<String> searchList = new ArrayList<>();
             searchList.add(jComboBoxMotherboard.getSelectedItem().toString());
@@ -250,6 +262,9 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     public void setJTableModelDesktop(ArrayList<Desktop> desktops) {
+        //Con el método setJTableModelDesktop() se asigna el ArrayList
+        // de Desktop que se encuentra como argumento para mostrarlo
+        // en el jTable1.
         DefaultTableModel modelDesktop = new DefaultTableModel(new Object[]{
                 "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
         }, 0) {
@@ -266,6 +281,9 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     public void setJTableModelLaptops(ArrayList<Laptop> laptops) {
+        //Con el método setJTableModelLaptop() se asigna el ArrayList
+        // de Laptop que se encuentra como argumento para mostrarlo
+        // en el jTable1.
         DefaultTableModel modelLaptop = new DefaultTableModel(new Object[]{
                 "Motherboard", "CPU", "RAM", "GPU", "Storage", "PSU"
         }, 0) {
@@ -282,6 +300,9 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     public void setComboBoxModelDesktop() {
+        //Con el método setComboBoxModelDesktop() se asigna
+        // a cada ComboBox las opciones de búsqueda
+        // disponibles para objetos del tipo Desktop.
         jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Seleccione el componente", "Gigabyte Z690 Aorus Pro", "MSI MEG Z690I Unify", "NZXT N7 B550", "MSI MAG B660M Mortar", "Asus ROG Strix B660-I"}));
         jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Seleccione el componente", "Intel Core i9-12900KS", "Intel Core i7-12900K", "AMD Ryzen 9 5950X", "AMD Ryzen Threadripper 3960X", "Intel Core i5-11600KF"}));
         jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Seleccione el componente", "Corsair Vengeance LPX", "Lexar Thor", "Kingston FURY Renegade", "Teamgroup T-Force Vulcan Z", "G.Skill Ripjaws Serie V"}));
@@ -291,6 +312,9 @@ public class ClientGUI extends javax.swing.JFrame {
     }
 
     public void setComboBoxModelLaptop() {
+        //Con el método setComboBoxModelLaptop() se asigna
+        // a cada ComboBox las opciones de búsqueda
+        // disponibles para objetos del tipo Laptop.
         jComboBoxMotherboard.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Seleccione el componente", "Apple MacBook Pro Motherboard", "LG Gram 17Z90N Motherboard", "Alienware AW15R3-7002SLV-PUS Motherboard", "Razer Blade Pro 17 Motherboard", "Asus ZenBook Flip S 13 Motherboard"}));
         jComboBoxCPU.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Seleccione el componente", "Intel Core i7-12700H", "Intel Core i9-12900H", "AMD Ryzen 7 6800H", "AMD Ryzen 9 5900HS", "Intel Xeon W-10885M"}));
         jComboBoxRAM.setModel(new javax.swing.DefaultComboBoxModel<>(new String[]{"Seleccione el componente", "G.Skill Trident Z5 RGB", "Samsung DDR5-4800", "TeamGroup T-Force Xtreem", "Patriot Viper Steel", "Corsair Vengeance RGB Pro"}));

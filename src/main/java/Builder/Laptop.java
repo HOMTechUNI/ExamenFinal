@@ -23,30 +23,35 @@ public class Laptop implements Device {
     @Override
     public Motherboard getMotherboard() {
         //Retorna el objeto motherboard de Laptop
+        assert motherboard != null : "El objeto motherboard no puede ser nulo";
         return motherboard;
     }
 
     @Override
     public CPU getCpu() {
         //Retorna el objeto cpu de Laptop
+        assert cpu != null : "El objeto cpu no puede ser nulo";
         return cpu;
     }
 
     @Override
     public RAM getRam() {
         //Retorna el objeto ram de Laptop
+        assert ram != null : "El objeto ram no puede ser nulo";
         return ram;
     }
 
     @Override
     public Storage getStorage() {
         //Retorna el objeto storage de Laptop
+        assert storage != null : "El objeto storage no puede ser nulo";
         return storage;
     }
 
     @Override
     public GPU getGpu() {
         //Retorna el objeto gpu de Laptop
+        assert gpu != null : "El objeto gpu no puede ser nulo";
         return gpu;
     }
 
@@ -60,6 +65,7 @@ public class Laptop implements Device {
         allNameComponents.add(ram.getName());
         allNameComponents.add(storage.getName());
         allNameComponents.add(gpu.getName());
+        assert allNameComponents != null : "El array no puede ser nulo";
         return allNameComponents;
     }
 }

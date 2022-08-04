@@ -23,6 +23,7 @@ public class StoreIterator {
 
     //método para iterar entre las tiendas en store de la lista items y entre sus paquetes para encontrar todas las laptops que cumplen ocnl as condiciones de búsqueda
     public ArrayList searchLaptop(ArrayList<String> search) {
+        assert search != null : "El arraylist del argumento debe ser diferente de null";
         ArrayList<Laptop> result = new ArrayList<>();
         for (Store store : items) {
             ArrayList<Package> co = store.returnArrayList();
@@ -42,11 +43,13 @@ public class StoreIterator {
                 }
             }
         }
+        assert result != null : "El arraylist del resultado debe ser diferente de null";
         return result;
     }
 
     //método para iterar entre las tiendas en store de la lista items y entre sus paquetes para encontrar todos desktop que cumplen ocnl as condiciones de búsqueda
     public ArrayList searchDesktop(ArrayList<String> search) {
+        assert search != null : "El arraylist del argumento debe ser diferente de null";
         ArrayList<Desktop> result = new ArrayList<>();
         for (Store store : items) {
             ArrayList<Package> co = store.returnArrayList();
@@ -66,6 +69,7 @@ public class StoreIterator {
                 }
             }
         }
+        assert result != null : "El arraylist del resultado debe ser diferente de null";
         return result;
     }
 
@@ -85,6 +89,7 @@ public class StoreIterator {
                 }
             }
         }
+        assert result != null : "El arraylist del resultado debe ser diferente de null";
         return result;
     }
 
@@ -106,7 +111,7 @@ public class StoreIterator {
         return result;
     }
     */
-    //método que retorna  todos los desktops que hay en todas las tinedas de la lista items
+    //método que retorna  todos los desktops que hay en todas las tiendas de la lista items
     public ArrayList returnAllDesktops() {
         ArrayList<Desktop> result = new ArrayList<>();
         for (Store store : items) {
@@ -120,6 +125,7 @@ public class StoreIterator {
                 }
             }
         }
+        assert result != null : "El arraylist del resultado debe ser diferente de null";
         return result;
     }
 
