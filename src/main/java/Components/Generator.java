@@ -28,9 +28,6 @@ public class Generator {
     }
 
     public int getRandomNumberUsingNextInt(int min, int max) {
-        assert min > 0 : "El minimo no puede ser menor o igual a 0";
-        assert max > 0 : "El maximo no puede ser menor o igual a 0";
-        assert min < max : "El minimo no puede ser mayor o igual al maximo";
         Random rand = new Random();
         return rand.nextInt(max - min) + min;
     }
@@ -149,9 +146,6 @@ public class Generator {
     }
 
     public ArrayList<Store> genStoresPackagesDevices(int stores, int packages, int devices) {
-        assert stores > 0 : "El numero de tiendas no puede ser menor a 0 o 0";
-        assert packages > 0 : "El numero de paquetes no puede ser menor a 0 o 0";
-        assert devices > 0 : "El numero de dispositivos no puede ser menor a 0 o 0";
         Generator gen = new Generator();
         ArrayList<Store> storesList = new ArrayList<>();
         for (int i = 0; i < stores; i++) {

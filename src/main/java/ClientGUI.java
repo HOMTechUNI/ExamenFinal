@@ -83,7 +83,7 @@ public class ClientGUI extends javax.swing.JFrame {
         jComboBoxPSU = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Nombre");
+        setTitle("HOMTECH Device Manager");
         laptopRadioButton.setText("Laptop");
         laptopRadioButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
