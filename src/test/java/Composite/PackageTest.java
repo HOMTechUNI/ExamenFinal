@@ -21,7 +21,7 @@ public class PackageTest {
     RAM ram;
     Storage storage;
     @Test
-    public void returnArrayListTest(){
+    public void returnArrayListTest(){//prueba del método returnArrayList de la clase Package
 
         package1=new Package();
         //creacion de pc

@@ -14,7 +14,7 @@ public class DesktopTest {
     Desktop desktop;
 
     @Test
-    public void allComponentsTest() {
+    public void allComponentsTest() {//pureba del método allComponents de la clase Desktop
         Motherboard motherboard = new Motherboard("MB1", "nameMotherboard1", "type", 100.0);
         CPU cpu = new CPU("CPU1", "nameCPU1", "type", 100.0);
         RAM ram = new RAM("RAM1", "nameRAM1", "Memory", "type", 100.0);

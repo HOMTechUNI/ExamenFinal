@@ -20,32 +20,32 @@ public class Desktop implements Device {
         this.gpu = new GPU();
     }
 
-    @Override
+    @Override//método para retornar el objeto Motherboard que se tiene asignado
     public Motherboard getMotherboard() {
         return motherboard;
     }
 
-    @Override
+    @Override//método para retornar el objeto CPU que se tiene asignado
     public CPU getCpu() {
         return cpu;
     }
 
-    @Override
+    @Override//método para retornar el objeto RAM que se tiene asignado
     public RAM getRam() {
         return ram;
     }
 
-    @Override
+    @Override//método para retornar el objeto Storage que se tiene asignado
     public Storage getStorage() {
         return storage;
     }
 
-    @Override
+    @Override//método para retornar el objeto GPU que se tiene asignado
     public GPU getGpu() {
         return gpu;
     }
 
-    @Override
+    @Override//método para retornar el objeto Motherboard que se tiene asignado
     public ArrayList<String> allComponents() {
         ArrayList<String> allNameComponents = new ArrayList<>();
         allNameComponents.add(motherboard.getName());
@@ -57,6 +57,7 @@ public class Desktop implements Device {
         return allNameComponents;
     }
 
+    //método para retornar el objeto PSU que se tiene asignado
     public PSU getPsu() {
         return psu;
     }

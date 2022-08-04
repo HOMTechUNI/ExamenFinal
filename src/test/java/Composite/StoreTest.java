@@ -25,7 +25,7 @@ public class StoreTest {
     RAM ram;
     Storage storage;
     @Test
-    public void returnArrayListTest(){
+    public void returnArrayListTest(){//prueba del método returnArrayList de la clase Store
         Desktop desktop1;
         Desktop desktop2;
         Laptop laptop1;
@@ -77,8 +77,8 @@ public class StoreTest {
         package2.addToPackage(laptop2);
 
         //añadir los paquetes a la tienda
-        store.addToContainer(package1);
-        store.addToContainer(package2);
+        store.addToStore(package1);
+        store.addToStore(package2);
 
         ArrayList<Package>packages=new ArrayList<>();
         packages.add(package1);

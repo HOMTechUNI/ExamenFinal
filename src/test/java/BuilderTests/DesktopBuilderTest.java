@@ -17,7 +17,7 @@ public class DesktopBuilderTest {
     Storage storage;
 
     @Test
-    public void setCpuTest() {
+    public void setCPUTest() {//prueba del método setCPU de la clase DesktopBuilder
         cpu = new CPU("1", "nameCPU", "type", 100.0);
         desktopBuilder.setCpu(cpu);
         desktop = desktopBuilder.returnDesktop();
@@ -25,7 +25,7 @@ public class DesktopBuilderTest {
     }
 
     @Test
-    public void setGPUTest() {
+    public void setGPUTest() {//prueba del método setGPU de la clase DesktopBuilder
         gpu = new GPU("1", "nameGPU", "Memory", "type", 100.0);
         desktopBuilder.setGpu(gpu);
         desktop = desktopBuilder.returnDesktop();
@@ -33,7 +33,7 @@ public class DesktopBuilderTest {
     }
 
     @Test
-    public void setMotherboardTest() {
+    public void setMotherboardTest() {//prueba del método setMotherboard de la clase DesktopBuilder
         motherboard = new Motherboard("1", "nameMotherboard", "type", 100.0);
         desktopBuilder.setMotherboard(motherboard);
         desktop = desktopBuilder.returnDesktop();
@@ -41,7 +41,7 @@ public class DesktopBuilderTest {
     }
 
     @Test
-    public void setPSUTest() {
+    public void setPSUTest() {//prueba del método setPSU de la clase DesktopBuilder
         psu = new PSU("1", "namePSU", "type", 100.0);
         desktopBuilder.setPsu(psu);
         desktop = desktopBuilder.returnDesktop();
@@ -49,7 +49,7 @@ public class DesktopBuilderTest {
     }
 
     @Test
-    public void setRamtest() {
+    public void setRAMtest() {//prueba del método setRAM de la clase DesktopBuilder
         ram = new RAM("1", "nameRAM", "Memory", "type", 100.0);
         desktopBuilder.setRam(ram);
         desktop = desktopBuilder.returnDesktop();
@@ -57,7 +57,7 @@ public class DesktopBuilderTest {
     }
 
     @Test
-    public void setStorageTest() {
+    public void setStorageTest() {//prueba del método setStorage de la clase DesktopBuilder
         storage = new Storage("1", "nameStorage", "memory", "type", 100.0);
         desktopBuilder.setStorage(storage);
         desktop = desktopBuilder.returnDesktop();
@@ -65,7 +65,7 @@ public class DesktopBuilderTest {
     }
 
     @Test
-    public void buildDesktopTest() {
+    public void buildDesktopTest() {//prueba del método buildDesktop de la clase DesktopBuilder
         cpu = new CPU("2", "nameCPU1", "type", 100.0);
         gpu = new GPU("3", "nameGPU1", "Memory", "type", 100.0);
         motherboard = new Motherboard("4", "nameMotherboard1", "type", 100.0);

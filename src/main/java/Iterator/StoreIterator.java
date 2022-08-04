@@ -15,12 +15,13 @@ public class StoreIterator {
 
     public void addNewItems(Store box) {
         items.add(box);
-    }
+    }//método para asignar un objeto Store al ArrayList items
 
-    public void setStore(ArrayList<Store> store) {
+    public void setStore(ArrayList<Store> store) {//método para asignar un objeto Store al ArrayList items
         items = store;
     }
 
+    //método para iterar entre las tiendas en store de la lista items y entre sus paquetes para encontrar todas las laptops que cumplen ocnl as condiciones de búsqueda
     public ArrayList searchLaptop(ArrayList<String> search) {
         ArrayList<Laptop> result = new ArrayList<>();
         for (Store store : items) {
@@ -44,6 +45,7 @@ public class StoreIterator {
         return result;
     }
 
+    //método para iterar entre las tiendas en store de la lista items y entre sus paquetes para encontrar todos desktop que cumplen ocnl as condiciones de búsqueda
     public ArrayList searchDesktop(ArrayList<String> search) {
         ArrayList<Desktop> result = new ArrayList<>();
         for (Store store : items) {
@@ -67,6 +69,7 @@ public class StoreIterator {
         return result;
     }
 
+    //método que retorna  todas las laptops que hay en todas las tinedas de la lista items
     public ArrayList returnAllLaptops() {
         ArrayList<Laptop> result = new ArrayList<>();
         for (int i = 0; i < items.size(); i++) {
@@ -103,6 +106,7 @@ public class StoreIterator {
         return result;
     }
     */
+    //método que retorna  todos los desktops que hay en todas las tinedas de la lista items
     public ArrayList returnAllDesktops() {
         ArrayList<Desktop> result = new ArrayList<>();
         for (Store store : items) {
